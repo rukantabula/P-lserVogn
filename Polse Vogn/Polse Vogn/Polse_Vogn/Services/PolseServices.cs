@@ -14,8 +14,8 @@ namespace Polse_Vogn.Services
         {
             RestClient<Advert> restClient = new RestClient<Advert>();
 
-            var advertList = await restClient.GetAsync();
-            return advertList;
+            var AdvertList = await restClient.GetAsync();
+            return AdvertList;
         }
     }
 }

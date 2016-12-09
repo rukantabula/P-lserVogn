@@ -4,8 +4,10 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using Polse_Vogn.Models;
 
 namespace Plugin.RestClient
+
 {
     /// <summary>
     /// RestClient implements methods for calling CRUD operations
@@ -13,7 +15,9 @@ namespace Plugin.RestClient
     /// </summary>
     public class RestClient<T>
     {
-        private const string WebServiceUrl = "http://api.eniro.com/cs/proximity/basic?profile=rukantabula&key=9010769844804077008&country=dk&version=1.1.3&search_word=p%C3%B8lse&to_list=60&latitude=56.162939&longitude=10.203921000000037&max_distance=1000/";
+        private const string WebServiceUrl = "https://api.eniro.com/cs/proximity/basic?profile=rukantabula&key=9010769844804077008&country=dk&version=1.1.3&search_word=p%C3%B8lse&to_list=60&latitude=56.162939&longitude=10.203921000000037&max_distance=1000/";
+
+       
 
         public async Task<List<T>> GetAsync()
         {

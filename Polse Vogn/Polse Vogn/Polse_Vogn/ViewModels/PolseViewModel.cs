@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using Polse_Vogn.Models;
 using Polse_Vogn.Services;
 
-namespace Polse_Vogn.VieModels
+namespace Polse_Vogn.ViewModels
 {
    public class PolseViewModel : INotifyPropertyChanged
     {
@@ -82,12 +82,41 @@ namespace Polse_Vogn.VieModels
         }
 
 
+        bool isBusy = false;
+        public bool IsBusy
+        {
+            get { return isBusy; }
+            set { isBusy = value; OnPropertyChanged(); }
+        }
+        public PolseViewModel()
+        {
+            InitializeDataAsync();
+        }
+
         private async Task InitializeDataAsync()
         {
-            var employeesServices = new PolseServices();
+            if (IsBusy)
+                return;
 
-            AdvertList = await employeesServices.GetPolseAsync();
+            IsBusy = true;
+            try
+            {
+                var polseServices = new PolseServices();
+
+                AdvertList = await polseServices.GetPolseAsync();
+
+            }
+
+            catch (Exception ex)
+            {
+              
+            }
+            finally
+            {
+                IsBusy = false;
+            }
         }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)

@@ -41,17 +41,12 @@
     <Compile Include="Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Models\Address.cs" />
     <Compile Include="Models\Advert.cs" />
-    <Compile Include="Models\CompanyInfo.cs" />
-    <Compile Include="Models\Coordinate.cs" />
-    <Compile Include="Models\Location.cs" />
-    <Compile Include="Models\RootObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RestClient\RestClient.cs" />
     <Compile Include="RestClient\TaskModel.cs" />
     <Compile Include="Services\PolseServices.cs" />
-    <Compile Include="VieModels\PolseViewModel.cs" />
+    <Compile Include="ViewModels\PolseViewModel.cs" />
     <Compile Include="Views\PolseListPage.xaml.cs">
       <DependentUpon>PolseListPage.xaml</DependentUpon>
     </Compile>
