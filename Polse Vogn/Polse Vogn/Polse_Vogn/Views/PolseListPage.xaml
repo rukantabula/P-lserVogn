@@ -2,37 +2,41 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewModels="clr-namespace:Polse_Vogn.ViewModels;assembly=Polse_Vogn"
+             xmlns:newResrClient="clr-namespace:Polse_Vogn.NewResrClient;assembly=Polse_Vogn"
              x:Class="Polse_Vogn.Views.PolseListPage">
   <ContentPage.BindingContext>
     <viewModels:PolseViewModel/>
   </ContentPage.BindingContext>
 
+ 
+
   <StackLayout Orientation="Vertical">
-    <Label Text="This is it!" TextColor="Black" FontSize="24"/>
- <ScrollView HeightRequest="500" BackgroundColor="Aqua">
-   <ListView HasUnevenRows="True" SeparatorColor="Black" ItemsSource="{Binding AdvertList}" BackgroundColor="Fuchsia"
+    
+    <Label Text="{Binding example}" TextColor="Black" FontSize="24"/>
+ <ScrollView HeightRequest="800" BackgroundColor="Aqua">
+   <ListView HasUnevenRows="True" SeparatorColor="Black" ItemsSource="{Binding Advert}" 
              CachingStrategy="RecycleElement"
-              IsPullToRefreshEnabled="True"
+              IsPullToRefreshEnabled="True">
              
-              IsRefreshing="{Binding IsBusy, Mode=OneWay}">
+             
      
     
      <ListView.ItemTemplate>
        <DataTemplate>
          <ViewCell>
           
-             <Label Text="{Binding phoneNumbers}" TextColor="Black" FontSize="18" Opacity=".6"/>
-             <Label Text="{Binding address}" TextColor="Black" FontSize="24"/>
-             <Label Text="{Binding location}" TextColor="Black" FontSize="18" Opacity=".6"/>
-             <Label Text="{Binding infoPageLink}" TextColor="Black" FontSize="24"/>
+             <Label Text="{Binding phoneNumbers}" TextColor="Black" FontSize="10" Opacity=".6"/>
+             <Label Text="{Binding address}" TextColor="Black" FontSize="10"/>
+             <Label Text="{Binding location}" TextColor="Black" FontSize="10" Opacity=".6"/>
+             <!--<Label Text="{Binding infoPageLink}" TextColor="Black" FontSize="10"/>-->
            
          </ViewCell>
        </DataTemplate>
      </ListView.ItemTemplate>
    </ListView>
-   <Label Text="This is it!" TextColor="Black" FontSize="24"/>
+  
  </ScrollView>
-    <Label Text="This is it!" TextColor="Black" FontSize="24"/>
+    
   </StackLayout>
-  <Label Text="This is it!" TextColor="Black" FontSize="24"/>
+  
 </ContentPage>
