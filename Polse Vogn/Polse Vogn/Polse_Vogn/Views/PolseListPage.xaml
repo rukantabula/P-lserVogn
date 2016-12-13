@@ -25,8 +25,8 @@
        <DataTemplate>
          <ViewCell>
           
-             <Label Text="{Binding phoneNumbers}" TextColor="Black" FontSize="10" Opacity=".6"/>
-             <Label Text="{Binding address}" TextColor="Black" FontSize="10"/>
+             <!--<Label Text="{Binding phoneNumbers}" TextColor="Black" FontSize="10" Opacity=".6"/>-->
+             <Label Text="{Binding companyInfo.companyName}" TextColor="Black" FontSize="20"/>
              <Label Text="{Binding location}" TextColor="Black" FontSize="10" Opacity=".6"/>
              <!--<Label Text="{Binding infoPageLink}" TextColor="Black" FontSize="10"/>-->
            

@@ -18,8 +18,10 @@ namespace Polse_Vogn.ViewModels
     public class PolseViewModel : INotifyPropertyChanged
     {
         private List<Advert> _advert;
-        //private Advert _companyName;
+        private Advert _companyName;
+        //private CompanyInfo _companyName;
         private Advert _phoneNumbers;
+        private Advert _postCode;
         private Advert _address;
         private Advert _location;
         private Advert _infoPageLink;
@@ -35,15 +37,26 @@ namespace Polse_Vogn.ViewModels
             }
         }
 
-        //public Advert companyName
+        public Advert companyName
+        {
+            get { return _companyName; }
+            set
+            {
+                _companyName = value;
+                OnPropertyChanged();
+            }
+        }
+
+        //public CompanyInfo companyName
         //{
         //    get { return _companyName; }
         //    set
         //    {
-        //        _companyName = value; 
+        //        _companyName = value;
         //        OnPropertyChanged();
         //    }
         //}
+
 
 
         public Advert phoneNumbers
@@ -52,6 +65,16 @@ namespace Polse_Vogn.ViewModels
             set
             {
                 _phoneNumbers = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public Advert postCode
+        {
+            get { return _postCode; }
+            set
+            {
+                _postCode = value;
                 OnPropertyChanged();
             }
         }
